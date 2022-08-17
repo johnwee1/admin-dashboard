@@ -1,0 +1,20 @@
+body{
+    display:grid;
+    grid-template-columns: max(10%, 50px) 1fr;
+    grid-template-rows: 10% 90%;
+    grid-template-areas: "nav hdr"
+                        "nav main";
+    border: 2px solid black;
+}
+
+.sidebar{
+    grid-area: nav;
+}
+
+main{
+    grid-area: main;
+}
+
+.header{
+    grid-area: hdr;
+}
