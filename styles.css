@@ -1,20 +1,47 @@
 body{
     display:grid;
-    grid-template-columns: max(10%, 50px) 1fr;
-    grid-template-rows: 10% 90%;
-    grid-template-areas: "nav hdr"
-                        "nav main";
-    border: 2px solid black;
+    grid-template-columns: max(15%, 80px) 1fr;
+    grid-template-rows: min(10%,100px) 90%;
+    grid-template-areas:
+        "nav hdr"
+        "nav main";
+    margin: 0;
 }
 
 .sidebar{
     grid-area: nav;
+    background-color: navy;
+    height: 110%; /*how to fix this????*/
 }
 
 main{
     grid-area: main;
+    display:grid;
+    grid-template-columns: 7fr 3fr;
+}
+
+.card-container{
+    grid-column: 1;
+    background-color: forestgreen;
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    padding: 25px;
+    grid-auto-rows: 200px;
+
+}
+
+.card-container > div{
+    border: 2px solid black;
+}
+
+.tweets{
+    grid-column: 2;
+    background-color: fuchsia;
+
 }
 
 .header{
     grid-area: hdr;
+    background-color: lightseagreen;
 }
