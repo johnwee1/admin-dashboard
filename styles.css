@@ -1,47 +1,106 @@
+:root{
+    --border-size: 0.7rem;
+    font-family: 'Roboto', sans-serif;
+}
 body{
     display:grid;
     grid-template-columns: max(15%, 80px) 1fr;
-    grid-template-rows: min(10%,100px) 90%;
+    grid-template-rows: max(10%,80px) 1fr;
     grid-template-areas:
         "nav hdr"
         "nav main";
     margin: 0;
+    height: 100vh;
+    
+}
+.title{
+    font-size: 2rem;
+    font-weight: 700;
 }
 
 .sidebar{
     grid-area: nav;
-    background-color: navy;
-    height: 110%; /*how to fix this????*/
+    background-color: rgb(221, 255, 189);
 }
 
 main{
     grid-area: main;
     display:grid;
     grid-template-columns: 7fr 3fr;
+    gap: 2rem;
+    background-color:rgb(113, 179, 64);
+    padding: 3rem;
+    padding-top: 1.5rem;
 }
 
 .card-container{
     grid-column: 1;
-    background-color: forestgreen;
     display:grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 25px;
-    padding: 25px;
-    grid-auto-rows: 200px;
+    grid-template-columns: repeat(auto-fill, minmax(250px,1fr));
+    grid-template-rows: 20px 1fr;
+    gap: 12px;
+    grid-auto-rows: 1fr;
 
+}
+.card-container > h3{
+    grid-column: 1/-1;
+    font-size: 1rem;
+    margin: 8px;
 }
 
 .card-container > div{
-    border: 2px solid black;
+    display: grid;
+    grid-template-columns: 5% 1fr;
+    -webkit-box-shadow: 6px 11px 16px 1px rgba(0,0,0,0.6); 
+    box-shadow: 6px 11px 16px 1px rgba(0,0,0,0.6);
+    background-color: #3C5A14;
+    border-radius: var(--border-size);
 }
 
+.card-container > div > div:first-child{
+    border-top-left-radius: var(--border-size);
+    border-bottom-left-radius: var(--border-size);
+    background-color: rgb(123, 200, 206);
+}
+
+.card-container > div > div:last-child{
+    border-top-right-radius: var(--border-size);
+    border-bottom-right-radius: var(--border-size);
+    display:flex;
+    gap: 0.5rem;
+    box-sizing: border-box;
+    padding: 0.5rem;
+}
+
+.card-container > div > div:last-child > div{
+    flex: 1;
+    display: flex;
+    align-items: center;
+} 
+.toolbar{
+    justify-content: center;
+}
+.placeholder{
+    border-radius: 2rem;
+    background-color: grey;
+    width: 80%;
+    max-width: 80%;
+    height: 20%;
+    flex: 1 1 0;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    background-color: whitesmoke;
+}
 .tweets{
     grid-column: 2;
-    background-color: fuchsia;
+    background-color: #669D31;
 
 }
 
 .header{
     grid-area: hdr;
-    background-color: lightseagreen;
+    background-color:#4f682f;
 }
