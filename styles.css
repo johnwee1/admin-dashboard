@@ -23,6 +23,41 @@ body{
     background-color: rgb(221, 255, 189);
 }
 
+nav{
+    display: grid;
+    grid-template-rows: 80px 1fr;
+}
+
+nav > div.logo{
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+nav > div.gridbar > a{
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 20px;
+    text-decoration: none;
+}
+
+nav > div.gridbar{
+    display:grid;
+    grid-template-rows: repeat(4, 5%);
+    left: 35px;
+}
+
+nav > div.gridbar > a:hover {
+    text-decoration: underline;
+    transform: scale(1.03);
+    transition: 0.3s
+}
+
+nav > div.gridbar > a:active{
+    transform: scale(1);
+    transition: 0.1s;
+}
+
 main{
     grid-area: main;
     display:grid;
@@ -55,6 +90,12 @@ main{
     box-shadow: 6px 11px 16px 1px rgba(0,0,0,0.6);
     background-color: #3C5A14;
     border-radius: var(--border-size);
+    transition: 0.4s;
+}
+
+.card-container > div:hover{
+    transform: scale(1.02);
+
 }
 
 .card-container > div > div:first-child{
