@@ -8,19 +8,104 @@ img{
 body{
     display:grid;
     grid-template-columns: max(18%, 80px) 1fr;
-    grid-template-rows: max(10%,80px) 1fr;
+    grid-template-rows: max(9rem,80px) 1fr;
     grid-template-areas:
         "nav hdr"
         "nav main";
     margin: 0;
-    height: 100vh;
     
 }
+/*
+span.sidebartext{
+    overflow: hidden;
+}*/
+
 .title{
     font-size: 2rem;
     font-weight: 700;
 }
 
+.header{
+    grid-area: hdr;
+    background-color:#4f682f;
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+.search{
+    display:grid;
+    grid-template-columns: auto 1fr;
+    box-sizing: border-box;
+    padding: 1rem;
+}
+
+form{
+    display:flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+form > input {
+    flex: 1;
+    height: 30%;
+    max-width: 95%;
+    border-radius: 1.2rem;
+}
+.search > img{
+    align-self: center;
+    cursor:pointer;
+}
+.actions{
+    display:flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.actions > div{
+    flex: 1;
+    max-width: 8rem;
+    background-color: rgb(221, 255, 189);
+    border-radius: 0.8rem;
+    max-width: 40%;
+    height:40%;
+    justify-content: center;
+    display:flex;
+    text-align: center;
+    align-items: center;
+    font-size: 1.2rem;
+    font-family: 'Roboto',sans-serif;
+    font-weight: 700;
+    transition: 0.2s;
+}
+
+.actions > div:hover{
+    transform: scale(1.15);
+}
+
+.profile{
+    box-sizing: border-box;
+    padding:1rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 1.6rem;
+    font-family: 'Roboto',sans-serif;
+    font-weight: 700;
+}
+
+.profile > * {
+    flex: 1;
+    padding: 0;
+}
+.profile > .profile{
+    max-width:4rem;
+
+}
+.profile > img.profile{
+    width: 80px;
+    min-height: 80px;
+    max-height: 80px;
+    border-radius: 40px;
+    cursor:pointer;
+}
 .sidebar{
     grid-area: nav;
     background-color: rgb(221, 255, 189);
@@ -72,6 +157,7 @@ nav > div.gridbar > a,a:visited{
 
 main{
     grid-area: main;
+    box-sizing: border-box;
     display:grid;
     grid-template-columns: 7fr 3fr;
     gap: 2rem;
@@ -130,6 +216,10 @@ main{
     display: flex;
     align-items: center;
 } 
+
+.text{
+    overflow-y: auto;
+}
 .toolbar{
     justify-content: center;
 }
@@ -151,9 +241,4 @@ main{
     grid-column: 2;
     background-color: #669D31;
 
-}
-
-.header{
-    grid-area: hdr;
-    background-color:#4f682f;
 }
